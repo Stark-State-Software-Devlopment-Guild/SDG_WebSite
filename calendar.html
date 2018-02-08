@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <title>SDG Home</title>
+  <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
+  <style>
+	#calendar-wrap 
+	{
+		width: 97%;
+		overflow: hidden;
+	}
+
+	#calendar
+	{
+		padding: 10px;
+		width: 210px;
+		height: 210px;
+		text-align: center;
+		border: 1px solid #000000;
+		border-radius: 10px;
+		font-size: 16px;
+		background-image: linear-gradient(#83CCC2, #3BA828);
+		float: right;
+		padding: 5px; 
+		overflow: none;
+	}
+
+	#calendar-month-year
+	{
+		margin: 2px;
+	}
+
+	#calendar-dates>table>tr>td
+	{
+		padding: 4px;
+	}
+
+	#event-nav
+	{
+		float: right;
+		width: 80%;
+		min-height: 60px;
+		padding: 0;
+		background-image: linear-gradient(#83CCC2, #3BA828);
+		text-align: center;
+		position: relative;
+		font-size: 16pt;
+		padding: 3px;
+		border-radius: 10px;
+	}
+	
+/*	.nav-links
+	{
+		margin: 0 auto;
+		width: 100
+	}
+	
+	.nav-links a
+	{
+		margin: 0 auto;
+		padding: 5px;
+	}
+*/
+	.events
+	{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#container-events
+	{
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	#container-events>h2
+	{
+		text-align: left;
+		padding-left: 10px;
+		border-bottom: solid 5px #83CCC2;
+	}
+
+	#container-events>table
+	{
+		width: 95%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	#container-events>table>tr>td>h3
+	{
+		text-align: center;
+	}
+
+	#container-events>table>tr>td>h6
+	{
+		text-align: center;
+	}
+
+	#container-events>table>tr>td
+	{
+		text-align: center;
+		height: auto;
+	}
+  </style>
+  <script type="text/javascript" src="scripts/calendar.js"></script>
+  <script type="text/javascript" src="scripts/eventInfo.js"></script>
+    <!-- Include jQuery -->
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <script type="text/javascript" src="scripts/calendarScroll.js"></script>
+  <script src="https://use.fontawesome.com/4c9c134f39.js"></script>
+</head>
+<body onload="calendar(), eventData()">
+  <div id="wrapper">
+  <nav>
+    <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="logo"></a></div>
+    <div class="nav-links">
+      <a id="nav-index" href="index.html">Home</a>
+      <a id="nav-about" href="about.html">About</a>
+      <a id="nav-projects" href="calendar.html">Calendar</a>
+   </div> 
+  </nav>
+
+  <header>
+    <h1><img src="img/SDG logo (words white).png" alt="logo" height="95%" width="55%"></h1>
+    <a href="https://github.com/Stark-State-Software-Devlopment-Guild"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/Stark-State-College-Software-Development-Guild-1519047618176936/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    <a href="https://twitter.com/software_guild"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+  </header>
+  
+  <article> 
+
+    <div id="calendar-wrap">
+      <div id="calendar-nav">
+        <div id="calendar">
+          <div id="calendar-month-year">
+          </div>
+          <div id="calendar-dates">
+          </div>
+        </div>
+        <nav id="event-nav">
+          <div class="nav-links">
+            <a href="#">Last Month</a>
+            &nbsp;
+            <a href="#">First Event</a>
+            &nbsp;            
+            <a href="#">Second Event</a>
+            &nbsp;
+            <a href="#">Third Event</a>
+            &nbsp;
+            <a href="#">Next Month</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <section class="events">
+      <article id="container-events">
+        <h2>Events</h2>
+      </article>
+    </section>
+
+  </article>
+  
+
+  <footer>
+    <section id="contact">
+      <h4>Contact:&nbsp;</h4>
+      <p>President Caleb Wagner&nbsp;</p>
+      <p><a href="mailto:cwagner0318@starkstate.net">cwagner0318@starkstate.net</a></p>
+    </section>
+    <section id="copyright">
+      <p>&copy; 2017 Software Development Guild</p>
+    </section>
+  </footer>
+ 
+  </div>
+
+</body>
+</html>
+
+
