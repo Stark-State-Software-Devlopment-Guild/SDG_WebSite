@@ -21,10 +21,11 @@
 		border: 1px solid #000000;
 		border-radius: 10px;
 		font-size: 16px;
-		background-image: linear-gradient(#83CCC2, #3BA828);
 		float: right;
 		padding: 5px; 
 		overflow: none;
+		background-color: #484848;
+		border: 3px solid #9ACC76;
 	}
 
 	#calendar-month-year
@@ -43,7 +44,8 @@
 		width: 80%;
 		min-height: 60px;
 		padding: 0;
-		background-image: linear-gradient(#83CCC2, #3BA828);
+		background-color: #484848;
+		border: 3px solid #9ACC76; 
 		text-align: center;
 		position: relative;
 		font-size: 16pt;
@@ -53,6 +55,7 @@
 	
 /*	.nav-links
 	{
+
 		margin: 0 auto;
 		width: 100
 	}
@@ -61,8 +64,14 @@
 	{
 		margin: 0 auto;
 		padding: 5px;
+		bottom: 20;
+	}*/
+
+	#event-nav>.nav-links
+	{
+		bottom: 20px;
 	}
-*/
+
 	.events
 	{
 		width: 90%;
@@ -74,6 +83,7 @@
 		width: 100%;
 		margin: 0 auto;
 		text-align: center;
+		padding-bottom: 2em;
 	}
 
 	#container-events>h2
@@ -81,13 +91,18 @@
 		text-align: left;
 		padding-left: 10px;
 		border-bottom: solid 5px #83CCC2;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
 	}
 
 	#container-events>table
 	{
-		width: 95%;
+		width: 60%;
 		margin: 0 auto;
 		text-align: center;
+		border-bottom: solid 2px #484848;
+		padding-bottom: 2em;
+		padding-top: 1em;
 	}
 
 	#container-events>table>tr>td>h3
@@ -105,6 +120,13 @@
 		text-align: center;
 		height: auto;
 	}
+
+	#today
+	{
+		background-color: #9acc76;
+		border-radius: 10px;
+	}
+
   </style>
   <script type="text/javascript" src="scripts/calendar.js"></script>
   <script type="text/javascript" src="scripts/eventInfo.js"></script>

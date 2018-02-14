@@ -14,38 +14,10 @@
 			"description": "This is where the meeting minutes or ajenda go."
 		},
 		{
-			"name": "Week 9 Meeting",
-			"month": "October",
-			"day": 24,
-			"year": 2017,
-			"description": "This is where the meeting minutes or ajenda go."
-		},
-		{
-			"name": "Week 10 Meeting",
-			"month": "October",
-			"day": 26,
-			"year": 2017,
-			"description": "This is where the meeting minutes or ajenda go."
-		},
-		{
-			"name": "Week 11 Meeting",
-			"month": "November",
-			"day": 2,
-			"year": 2017,
-			"description": "This is where the meeting minutes or ajenda go."
-		},
-		{
-			"name": "Week 2000 Meeting",
-			"month": "December",
-			"day": 30,
-			"year": 2121,
-			"description": "This is where the meeting minutes or ajenda go."
-		},
-		{
-			"name": "Week 3000 Meeting",
-			"month": "December",
-			"day": 30,
-			"year": 2222,
+			"name": "Weekly 20th Meeting",
+			"month": "March",
+			"day": 13,
+			"year": 2018,
 			"description": "This is where the meeting minutes or ajenda go."
 		}
 	]
