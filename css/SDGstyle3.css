@@ -43,7 +43,7 @@ nav .nav-img
 	float:left;
 }
 
-nav .nav-links
+nav #nav-links
 {
 	margin-right: 15px;
 	width: 90%;
@@ -54,16 +54,17 @@ nav .nav-links
 	right:0;
 }
 
-nav .nav-links a
+nav #nav-links a
 {
 	text-decoration: none;
 	color: inherit;
 	margin-top: 99%;
+	padding-left: .5em;
 }
 /*End Navigation*/
 
 /*color for social media hover color*/
-nav .nav-links a:hover
+nav #nav-links a:hover
 {
     color: #83CCC2;
 	transition-duration: .35s;

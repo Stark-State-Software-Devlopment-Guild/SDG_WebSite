@@ -1,0 +1,15 @@
+{
+	"elements": [{
+			"name": "Home",
+			"link": "index.html"
+		},
+		{
+			"name": "About Us",
+			"link": "about.html"
+		},
+		{
+			"name": "Something New",
+			"link": "#"
+		}
+	]
+}
