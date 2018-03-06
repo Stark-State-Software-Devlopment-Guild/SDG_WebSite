@@ -5,16 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8"/>
   <title>SDG Home</title>
+  <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
   <style type="text/css">
     .box
     {
       height: 10%;
-      width: 34%;
-      border: 5px solid black;
-      float: right;
+      width: 32%;
+      float: left;
+      padding: .05em;
+      margin: 0 auto;
+      background-color: #484848;
+      border: 3px solid #9ACC76;
+      border-radius: 10px;
+    }
+    @media screen and (max-width: 1050px)
+    {
+      .box
+      {
+        float: none;
+        padding: .05em;
+        width: 80%;
+        max-width: 80%;
+        margin-bottom: .8em;
+      }
+      .about
+      {
+        float: none;
+      }
     }
   </style>
-  <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
   <div id="wrapper">
@@ -23,7 +42,7 @@
     <div class="nav-links">
       <a id="nav-index" href="index.html">Home</a>
       <a id="nav-about" href="about.html">About</a>
-      <a id="nav-projects" href="#">Calendar</a>
+      <a id="nav-projects" href="calendar.html">Calendar</a>
    </div> 
   </nav>
 
@@ -62,15 +81,11 @@
             <li> Discuss style of website and work on web pages to the next level of production (Basic style and descriptions)</li>
             <li> Assign those who have not received a page for the website css style or some other task.</li>
           </ul>
-          <br>
-          <br>
-          <br>
-          <br>
         </marquee>
       </div>
     </section>
     
-    <section class="meeting-info" style="float: right;"> 
+    <section class="meeting-info" style="float: right; padding: .05em;"> 
       <h3>Meetings are Tuesday from <time>4:00pm to 5:00pm</time>
       </h3>
       <p>
