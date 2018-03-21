@@ -1,5 +1,6 @@
 {
-	"elements": [{
+	"elements":[
+		{
 			"name": "Home",
 			"link": "index.html"
 		},

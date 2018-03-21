@@ -1,57 +1,27 @@
 /*
-*eventData is the driving funcion for EventInfo
+*NavData gets json object through jquery
 */
 function NavData(){
 	/*
-	*calls the HTTP request for the jason file
-	*sends a function as the callback argument
+	*jquery get json function
+	*
+	*refrence  https://www.youtube.com/watch?v=j-S5MBs4y0Q
+	*
+	*inner function gets elements array of objects within the json
+	*for each object it gets a name and link variable
+	*uses these variables in the print data function
 	*/
-	loadJSON(function(response) {
-  	/*
-  	*parse JSON string into object
-    */
-    var actual_JSON = JSON.parse(response);
+	$.getJSON('json/navigation.json', function(data){
+		 $(data.elements).each(function(index, value){
+		 	//console.log(value);
+		 	var name = value.name;
+		 	//regex to remove spaces
+		 	var id = name.replace(/\s/g, '');
+		 	var link = value.link;
 
-//used for debug ... outputs event data objects to the console log 
- 	//actual_JSON.events.forEach(function(element)
-	//{
-	//	console.log(element);
-	//});
-
-	/*
-	*for each loop to step through every object with in the first key value of "events"
-	*in the json file "events" is an array housing multiple objects containing keys with values
-	*item.x searches the current object within the elements arry for what ever key value x is
-		if x was name it would search for the key name.
-	*the key is found item.x returns the value of the key  
-	*/
-	actual_JSON.elements.forEach(function(item)
-	{
-		var name = item.name;
-		var link = item.link;
-		// //regular expression to remove spaces and capitals
-		// var re = new RegExp('[^a-z]');
-		// var newName = re.exec(name);
-		var id = "nav-" + name;
-
-		printNav(name, id, link);
+		 	printNav(name, id, link);
+		 });
 	});
-	});
-}
-
-/*
-*creates a new HTTP request for the json file to be parsed
-*/
-function loadJSON(callback) {   
-var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-xobj.open('GET', 'json/navigation.json', true);
-xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        callback(xobj.responseText);
-      }
-};
-xobj.send(null);  
 }
 
 /*
@@ -66,7 +36,7 @@ function printNav(name, id, link){
 
 	/*
 	*searches the HTML for the first tag with the id = "nav-links"
-	*then sets the last child element of the element to the table HTML object
+	*then sets the last child element of the element to the HTML a object
 	*/	
 	document.getElementById("nav-links").appendChild(links);
 }
