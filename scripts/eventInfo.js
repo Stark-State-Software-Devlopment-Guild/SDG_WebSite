@@ -2,55 +2,27 @@
 *eventData is the driving funcion for EventInfo
 */
 function eventData(){
-	/*
-	*calls the HTTP request for the jason file
-	*sends a function as the callback argument
-	*/
-	loadJSON(function(response) {
-  	/*
-  	*parse JSON string into object
-    */
-    var actual_JSON = JSON.parse(response);
-
-//used for debug ... outputs event data objects to the console log 
- 	//actual_JSON.events.forEach(function(element)
-	//{
-	//	console.log(element);
-	//});
-
-	/*
-	*for each loop to step through every object with in the first key value of "events"
-	*in the json file "events" is an array housing multiple objects containing keys with values
-	*item.x searches the current object within the elements arry for what ever key value x is
-		if x was name it would search for the key name.
-	*the key is found item.x returns the value of the key  
-	*/
-	actual_JSON.events.forEach(function(item)
-	{
-		var name = item.name;
-		var month = item.month;
-		var day = item.day;
-		var year = item.year;
-		var description = item.description;
-
-		printEventData(name, month, day, year, description);
-	});
-	});
-}
-
 /*
-*creates a new HTTP request for the json file to be parsed
-*/
-function loadJSON(callback) {   
-var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-xobj.open('GET', 'json/eventInfo.json', true);
-xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        callback(xobj.responseText);
-      }
-};
-xobj.send(null);  
+	*jquery get json function
+	*
+	*refrence  https://www.youtube.com/watch?v=j-S5MBs4y0Q
+	*
+	*inner function gets elements array of objects within the json
+	*for each object it gets a name and link variable
+	*uses these variables in the print data function
+	*/
+	$.getJSON('json/eventinfo.json', function(data){
+		 $(data.events).each(function(index, item){
+		 	//console.log(item);
+		 	var name = item.name;
+			var month = item.month;
+			var day = item.day;
+			var year = item.year;
+			var description = item.description;
+
+			printEventData(name, month, day, year, description);
+		 });
+	});
 }
 
 /*

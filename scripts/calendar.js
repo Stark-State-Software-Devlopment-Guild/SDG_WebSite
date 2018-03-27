@@ -68,7 +68,7 @@ function calendar(){
 	*searches the HTML for the first tag with the id = "calendar-dates"
 	*then sets the last child element of the element found to the calandar varibale which is an HTML table object
 	*/	
-	document.getElementById("calendar-dates").appendChild(calendar);
+	document.getElementById("calendar-dates").append(calendar);
 }
 
 /*
@@ -78,6 +78,7 @@ function calendar(){
 *takes parameter day as integer. Ths is the number for todays curent day can be anywhere from 1 to the max number of days for the current month
 */ 
 function getCalendar(dayStart, days, day){
+	console.log("in function");
 	/*
 	*create table HTML element
 	*/
@@ -144,13 +145,6 @@ function getCalendar(dayStart, days, day){
 	for(var r=3; r<=6; r++){
 		tr = document.createElement('tr');
 		for (var c =0; c<=6; c++) {
-			/*
-			*cheks to see if count is at maximum days if so exit the loop
-			*/
-			if(count > days){
-				table.appendChild(tr);
-				return table;
-			}
 			var td = document.createElement('td');
 			/*
 			*checks to see if the outputted day is the same as the current day
@@ -163,7 +157,16 @@ function getCalendar(dayStart, days, day){
 			count++;
 			tr.appendChild(td);
 		}
-		table.appendChild(tr);
+		/*
+		*cheks to see if count is at maximum days if so exit the loop
+		*/
+		if(count > days){
+			table.appendChild(tr);
+			console.log("returnbg object");
+			return table;
+		} else{
+			table.appendChild(tr);
+		}
 	}
 
 
@@ -171,42 +174,22 @@ function getCalendar(dayStart, days, day){
 
 function eventDateData(){
 	/*
-	*calls the HTTP request for the jason file
-	*sends a function as the callback argument
+	*jquery get json function
+	*
+	*refrence  https://www.youtube.com/watch?v=j-S5MBs4y0Q
+	*
+	*inner function gets elements array of objects within the json
+	*for each object it gets a name and link variable
+	*uses these variables in the print data function
 	*/
-	loadJSON(function(response) {
-  	/*
-  	*parse JSON string into object
-    */
-    var actual_JSON = JSON.parse(response);
+	$.getJSON('json/eventinfo.json', function(data){
+		 $(data.events).each(function(index, item){
+		 	//console.log(item);
+			var month = item.month;
+			var day = item.day;
+			var year = item.year;
 
-	/*
-	*for each loop to step through every object with in the first key value of "events"
-	*in the json file "events" is an array housing multiple objects containing keys with values
-	*item.x searches the current object within the elements arry for what ever key value x is
-		if x was name it would search for the key name.
-	*the key is found item.x returns the value of the key  
-	*/
-	actual_JSON.events.forEach(function(item)
-	{
-		var month = item.month;
-		var day = item.day;
-		var year = item.year;
-	});
+			
+		 });
 	});
 }
-
-/*
-*creates a new HTTP request for the json file to be parsed
-*/
- function loadJSON(callback) {   
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'json/eventInfo.json', true);
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);  
- }
