@@ -249,7 +249,7 @@ footer #copyright
 footer #copyright p
 {
     width: inherit;
-    text-align: left;
+    text-align: center;
 }
 
 footer #contact
