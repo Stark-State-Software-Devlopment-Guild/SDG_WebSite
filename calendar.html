@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8"/>
-  <title>SDG Home</title>
+  <title>SDG Calendar</title>
   <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
   <style>
 	#calendar-wrap 
@@ -130,20 +130,18 @@
   </style>
   <!-- Include jQuery -->
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <script type="text/javascript" src="scripts/navigation.js"></script>
   <script type="text/javascript" src="scripts/calendar.js"></script>
   <script type="text/javascript" src="scripts/eventInfo.js"></script>
   <script type="text/javascript" src="scripts/calendarScroll.js"></script>
   <script src="https://use.fontawesome.com/4c9c134f39.js"></script>
 </head>
-<body onload="calendar(), eventData()">
+<body onload="calendar(), eventData(), NavData()">
   <div id="wrapper">
   <nav>
     <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="logo"></a></div>
-    <div class="nav-links">
-      <a id="nav-index" href="index.html">Home</a>
-      <a id="nav-about" href="about.html">About</a>
-      <a id="nav-projects" href="calendar.html">Calendar</a>
-   </div> 
+    <div id="nav-links">
+    </div> 
   </nav>
 
   <header>
@@ -164,14 +162,12 @@
           </div>
         </div>
         <nav id="event-nav">
-          <div class="nav-links">
-            <a href="#">Last Month</a>
+          <div id="nav-links">
+            <a href="#">Prevous Month</a>
             &nbsp;
-            <a href="#">First Event</a>
+            <a href="#">Previous Event</a>
             &nbsp;            
-            <a href="#">Second Event</a>
-            &nbsp;
-            <a href="#">Third Event</a>
+            <a href="#">Next Event</a>
             &nbsp;
             <a href="#">Next Month</a>
           </div>

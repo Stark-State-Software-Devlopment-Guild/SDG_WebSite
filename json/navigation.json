@@ -9,8 +9,8 @@
 			"link": "about.html"
 		},
 		{
-			"name": "Something New",
-			"link": "#"
+			"name": "Calendar",
+			"link": "calendar.html"
 		}
 	]
 }
