@@ -17,10 +17,10 @@ body
 	min-width: 360px;	
 }
 
-body, nav, footer
+/*body, nav, footer
 {
 	background-image: url("../img/broken-noise.png");
-}
+}*/
 
 /*Navigation*/
 nav
