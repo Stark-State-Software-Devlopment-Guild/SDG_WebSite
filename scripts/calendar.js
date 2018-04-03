@@ -54,6 +54,7 @@ function calendar(){
 	*get date method returns the day value within the date
 	*/
 	var days = new Date(year, month+1, 0).getDate();
+	console.log(days);
 	/*
 	*creates a variable to save the calandar table to
 	*/
@@ -71,6 +72,16 @@ function calendar(){
 	document.getElementById("calendar-dates").append(calendar);
 }
 
+//gets query string and returns it or if none 
+//new calling function
+//calendar() is default 
+//make calandar with full args
+//check for valid month and year up to 2 years form now if query invalid or more than two years show alert and use default
+function getQueryString(){
+
+
+}
+
 /*
 *getCalendar functiion
 *takes parameter day start as an integer. This integer is the day number that the first day of the month falls on this is in order smtwtfs where sunday s is 0 and saturday s is 6
@@ -78,7 +89,7 @@ function calendar(){
 *takes parameter day as integer. Ths is the number for todays curent day can be anywhere from 1 to the max number of days for the current month
 */ 
 function getCalendar(dayStart, days, day){
-	console.log("in function");
+	//console.log("in function");
 	/*
 	*create table HTML element
 	*/
@@ -156,17 +167,19 @@ function getCalendar(dayStart, days, day){
 			td.innerHTML = count;
 			count++;
 			tr.appendChild(td);
+
+			/*
+			*cheks to see if count is at maximum days if so exit the loop
+			*/
+			if(count > days){
+				table.appendChild(tr);
+				//console.log("returnbg object");
+				return table;
+			} else{
+				table.appendChild(tr);
+			}
 		}
-		/*
-		*cheks to see if count is at maximum days if so exit the loop
-		*/
-		if(count > days){
-			table.appendChild(tr);
-			console.log("returnbg object");
-			return table;
-		} else{
-			table.appendChild(tr);
-		}
+		
 	}
 
 
