@@ -2,6 +2,7 @@
 *this is the driving function for the auto creation of the calendar
 */
 function calendar(){
+	getQueryString();
 	/*
 	*declares and initializes a date object
 	*/
@@ -79,7 +80,20 @@ function calendar(){
 //check for valid month and year up to 2 years form now if query invalid or more than two years show alert and use default
 function getQueryString(){
 
-
+	//get url
+	var queryString = window.location.search;
+	console.log(queryString);
+	var removeQuestionMark = queryString.replace(/\?/, "");
+	console.log(removeQuestionMark);
+	var keyValPair = removeQuestionMark.split("&");
+	var key, value, pair, obj = {};
+	for (var i = 0; i < keyValPair.length; i++){
+		pair = keyValPair[i].split("=");
+		key = pair[0];
+		val = pair[1];
+        obj[key] = val;
+		console.log(obj);
+	}
 }
 
 /*
