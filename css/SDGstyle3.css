@@ -43,7 +43,7 @@ nav .nav-img
 	float:left;
 }
 
-nav .nav-links
+nav #nav-links
 {
 	margin-right: 15px;
 	width: 90%;
@@ -54,16 +54,17 @@ nav .nav-links
 	right:0;
 }
 
-nav .nav-links a
+nav #nav-links a
 {
 	text-decoration: none;
 	color: inherit;
 	margin-top: 99%;
+	padding-left: .5em;
 }
 /*End Navigation*/
 
 /*color for social media hover color*/
-nav .nav-links a:hover
+nav #nav-links a:hover
 {
     color: #83CCC2;
 	transition-duration: .35s;
@@ -280,8 +281,14 @@ footer #contact a
 		font-size: 14pt;
 	}
 
+	header>h1>img
+	{
+		width: 55%;
+	}
+
 	.about
 	{
+		clear:left;
 		max-width: 100%;
 		font-size: 3em;
 	}
@@ -345,6 +352,11 @@ footer #contact a
 	{
 		font-size: 10pt;
 	}
+
+	header>h1>img
+	{
+		width: 65%;
+	}
 }
 
 @media screen and (max-width: 650px)
@@ -353,6 +365,11 @@ footer #contact a
 	{
 		font-size: 8pt;
 	}
+
+	header>h1>img
+	{
+		width: 75%;
+	}
 }
 
 @media screen and (max-width: 450px)
@@ -360,6 +377,11 @@ footer #contact a
 	body
 	{
 		font-size: 6pt;
+	}
+	
+	header>h1>img
+	{
+		width: 85%;
 	}
 }
 

@@ -4,18 +4,18 @@
   <script src="https://use.fontawesome.com/4c9c134f39.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8"/>
-  <title>SDG About</title>
+  <title>SDG Home</title>
   <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
-  <!-- Include jQuery -->
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
-  <script type="text/javascript" src="scripts/navigation.js"></script>
 </head>
-<body onload="NavData()">
+<body>
   <div id="wrapper">
   <nav>
-    <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="logo"></a></div>
-    <div id="nav-links">
-    </div> 
+    <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="cat"></a></div>
+    <div class="nav-links">
+      <a id="nav-index" href="index.html">Home</a>
+      <a id="nav-about" href="new about page.html">About</a>
+      <a id="nav-projects" href="#">Projects</a>
+   </div> 
   </nav>
 
   <header>
@@ -27,26 +27,25 @@
   
   <article class="main">  
     
-    <section class="about">
-      
+ <section class="about">
       <h2>The Guild</h2>
-
       <p>
-          The Software Development Guild is a gathering of student developers who seek to further advance their craft through collaboration. 
+          The purpose of the SDG is to promote software craftsmanship amongst 
+its members. Students 
+will work together to hone their skills while branching out and learning concepts and best 
+practices in varying areas not covered in tradition education. The SDG will fortify work skills 
+and prepare students for employment after gradu
+ation.
       </p>
-
       <p>
         The Guild serves as a meeting place for students of all backgrounds and understanding who seek to better understand software components and the development cycle. 
       </p> 
-
   		<h2>Message from the President</h2>
-  	  
-      <p>
-  		<i>Strive for hights, create new things and make goals for yourself. Come join our club, relax and as our gods may say "01001100 01100101 01100001 01110010 01101110 00100001"</i>         
+  	  <p>
+  		<i>Strive for new heights, create new things and make goals for yourself. Come join our club, relax and as our gods may say "01001100 01100101 01100001 01110010 01101110 00100001"(Learn!)</i>         
       </br>
        - Caleb Wagner
   	  </p>
-
     </section>
    
     <section class="officers">
@@ -66,35 +65,29 @@
             <td><img src="img/blankBlue.png"/><p>Event Coordinator Kevin Joseph</p></td>
           </tr>
         </table>
-    </section>
-
-    <section class="meeting-info"> 
+</section>
+<section class= "meeting-info">
       <h3>Meetings are Tuesday from <time>4:00pm to 5:00pm</time>
       </h3>
       <p>
        If you would like to join but can't make it to the meetings contact the project manager at <a href="mailto:MR/MRS_Manager@dudeguy.com">MR/MRS_Manager@dudeguy.com</a> to see what you can do to help on our next project!
       </p>
     </section>
-
   </article>
   
 
-  <footer>
-
+ <footer>
     <section id="contact">
       <h4>Contact:&nbsp;</h4>
       <p>President Caleb Wagner&nbsp;</p>
       <p><a href="mailto:cwagner0318@starkstate.net">cwagner0318@starkstate.net</a></p>
     </section>
-
     <section id="copyright">
       <p>&copy; 2017 Software Development Guild</p>
-    </section>
-
+</section>
   </footer>
  
   </div>
 
 </body>
-</html>
-
+  </html>
