@@ -17,10 +17,10 @@ body
 	min-width: 360px;	
 }
 
-body, nav, footer
+/*body, nav, footer
 {
 	background-image: url("../img/broken-noise.png");
-}
+}*/
 
 /*Navigation*/
 nav
@@ -59,7 +59,7 @@ nav #nav-links a
 	text-decoration: none;
 	color: inherit;
 	margin-top: 99%;
-	padding-left: .5em;
+	margin-left: .5em;
 }
 /*End Navigation*/
 
