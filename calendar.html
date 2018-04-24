@@ -36,6 +36,7 @@
 	#calendar-dates>table>tr>td
 	{
 		padding: 4px;
+		padding-bottom: 1px;
 	}
 
 	#event-nav
@@ -134,9 +135,10 @@
   <script type="text/javascript" src="scripts/calendar.js"></script>
   <script type="text/javascript" src="scripts/eventInfo.js"></script>
   <script type="text/javascript" src="scripts/calendarScroll.js"></script>
+  <script type="text/javascript" src="scripts/changeQueryString.js"></script>
   <script src="https://use.fontawesome.com/4c9c134f39.js"></script>
 </head>
-<body onload="calendar(), eventData(), NavData()">
+<body onload="getQueryString(), eventData(), NavData()">
   <div id="wrapper">
   <nav>
     <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="logo"></a></div>
@@ -163,13 +165,8 @@
         </div>
         <nav id="event-nav">
           <div id="nav-links">
-            <a href="#">Prevous Month</a>
-            &nbsp;
-            <a href="#">Previous Event</a>
-            &nbsp;            
-            <a href="#">Next Event</a>
-            &nbsp;
-            <a href="#">Next Month</a>
+          	<button type="button" onclick="lastMonth()">Last Month</button>
+            <button type="button" onclick="nextMonth()">Next Month</button>
           </div>
         </nav>
       </div>

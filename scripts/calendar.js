@@ -2,7 +2,6 @@
 *this is the driving function for the auto creation of the calendar
 */
 function calendar(){
-	getQueryString();
 	/*
 	*declares and initializes a date object
 	*/
@@ -73,6 +72,76 @@ function calendar(){
 	document.getElementById("calendar-dates").append(calendar);
 }
 
+//full arg get calendar
+function customCalendar(month, year){
+	/*
+	*creates an array that holds the string names for each month
+	*/
+	var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	/*
+	*creates a curent date in string format as month day year
+	*example March 1 2017
+	*/
+	var firstDate = month + " " + 1 + " " + year;
+	/*
+	*get month number for later 
+	*/
+	var monthNum;
+	for (var i = 0; i < monthName.length; i++) {
+		if(monthName[i].toUpperCase() === month.toUpperCase()){
+			monthNum = i;
+		}
+	}
+	/*
+	*set Day to 0 wont matter for this
+	*/
+	var day = 0;
+	/*
+	*sets variable to new date that is equal to first_date
+	*turns the date object to a date string
+	*returns Wed March 1 2017
+	*/
+	var tmp = new Date(firstDate).toDateString();
+	/*
+	*uses substring on tmp variable to obtain just the day name of the first day
+	*returns Wed
+	*/
+	var firstDay = tmp.substring(0, 3);
+	/*
+	*creates an array that houses the days of the week in the same orientation as the calendar will display them
+	*/
+	var dayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	/*
+	*uses the dayName array and saves the index number 0-6 of the first day variable as an integer
+	*/
+	var dayNumber = dayName.indexOf(firstDay);
+	/*
+	*get max number of days
+	*sets days = to new date using current year variable, current month variable
+	*using Date(year, month, day) if day is set to 0 Date returns exaple
+	*'Fri March 31 2017 00:00:00 GMT-0400 (Eastern Standard Time)'
+	*get date method returns the day value within the date
+	*/
+	var days = new Date(year, monthNum+1, 0).getDate();
+	console.log(days);
+	/*
+	*creates a variable to save the calandar table to
+	*/
+	var calendar = getCalendar(dayNumber, days, day);
+
+	/*
+	*searches the HTML for the first tag with the id = "calendar-month-year"
+	*it sets the text inside the HTML tag to the month name and year
+	*/
+	document.getElementById("calendar-month-year").innerHTML = month + " " + year;
+	/*
+	*searches the HTML for the first tag with the id = "calendar-dates"
+	*then sets the last child element of the element found to the calandar varibale which is an HTML table object
+	*/	
+	document.getElementById("calendar-dates").append(calendar);
+
+}
+
 //gets query string and returns it or if none 
 //new calling function
 //calendar() is default 
@@ -83,18 +152,47 @@ function getQueryString(){
 	//get url
 	var queryString = window.location.search;
 	console.log(queryString);
-	var removeQuestionMark = queryString.replace(/\?/, "");
-	console.log(removeQuestionMark);
-	var keyValPair = removeQuestionMark.split("&");
-	var key, value, pair, obj = {};
-	for (var i = 0; i < keyValPair.length; i++){
-		pair = keyValPair[i].split("=");
-		key = pair[0];
-		val = pair[1];
-        obj[key] = val;
-		console.log(obj);
+	if(queryString.toString() === ""){
+		calendar();
+	} else {
+		var removeQuestionMark = queryString.replace(/\?/, "");
+		console.log(removeQuestionMark);
+		var keyValPair = removeQuestionMark.split("&");
+		var key, value, pair, obj = {};
+		for (var i = 0; i < keyValPair.length; i++){
+			pair = keyValPair[i].split("=");
+			key = pair[0];
+			val = pair[1];
+	        obj[key] = val;
+			console.log(obj);
+		}
+
+		var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+		
+		var monthStr = obj["month"];
+		var monthNum;
+		for(var i = 0; i < monthName.length; i++){
+			if (monthStr.toUpperCase() === monthName[i].toUpperCase()){
+				monthNum = i;
+			}
+		}
+		var year = obj["year"];
+
+		var currentDate = new Date();
+		var currentMonth = currentDate.getMonth();
+		var currentMonthStr = monthName[currentMonth];
+		var currentYear = currentDate.getFullYear();
+
+		if(monthStr.toUpperCase() === currentMonthStr.toUpperCase() && year == currentYear){
+			calendar();
+		} else {
+			
+			customCalendar(monthName[monthNum], year);
+		}
 	}
 }
+
+
 
 /*
 *getCalendar functiion
@@ -167,7 +265,7 @@ function getCalendar(dayStart, days, day){
 	/*
 	*prints rows from whatever day it is on(controled by count) to the maximum number of days for that month
 	*/
-	for(var r=3; r<=6; r++){
+	for(var r=3; r<=7; r++){
 		tr = document.createElement('tr');
 		for (var c =0; c<=6; c++) {
 			var td = document.createElement('td');
