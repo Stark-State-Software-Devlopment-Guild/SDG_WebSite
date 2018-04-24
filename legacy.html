@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+
+  <script src="https://use.fontawesome.com/4c9c134f39.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8"/>
+
+  <title>SDG Legacy</title>
+
+  <link href="css/SDGstyle3.css" rel="stylesheet" type="text/css"/>
+
+   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  <script type="text/javascript" src="scripts/calendarScroll.js"></script>
+  
+	<script>
+	//jquery is running on load
+$(function() {
+    //find element by id calendar-nav and set it to variable calendar
+    var calendar = $('#side-nav');
+    //gets the psition of the calendar element relative to the top of the window
+    var calendarHomeY = $(calendar).offset().top;
+    //set a boolean variable called isFixed to false 
+    var isFixed = false;
+    //set a variable equal to the whole browser window
+    var $w = $(window);
+
+    /*
+    *check to see if the window is scrolling
+    *if it is do function
+    */
+    $w.scroll(function() {
+        /*
+        *sets a variable to the top of the window
+        */
+        var scrollTop = $w.scrollTop();
+
+        //boolean variable to compare the top of the windows position to the calendar div top position
+        var shouldBeFixed = scrollTop > calendarHomeY;
+
+        /*
+        *If the top calender position is out of the top window view
+        *
+        *and
+        *
+        *the isFixed variable is set to false
+        *
+        *then
+        *
+        *set the css for the calendar to a fixed position, the top position 0px,
+        *the left postion the same as the calendars left position relitive to the left of the window, 
+        *set the width to the same width as the calendar element
+        */
+        if (shouldBeFixed && !isFixed) {
+            calendar.css({
+                //breaks calendar variable from normal flow
+                position: 'fixed',
+                top: 0,
+                left: $(calendar).offset().left,
+                width: calendar.width()
+            });
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            calendar.css({
+                //puts calendar variable back into normal flow
+                position: 'static'
+            });
+            isFixed = false;
+        }
+    });
+});
+	</Script>
+	
+</head>
+
+<style>
+#side-nav{
+height:99vh;
+width:20vw;
+text-align: center;
+font-size: 2.5vw;
+float:left;
+margin-right: 1px;
+background-color:#303030;
+}
+
+#members{
+text-align:center;
+min-height:auto;
+min-width:78vw;
+float:right;
+}
+
+h1{
+font-size:5vw;
+}
+
+h2{
+font-size:3vw;
+margin-top:1px;
+margin-bottom:1px;
+}
+
+h3{
+font-size: 5vw;
+text-align:center;
+max-width:100%
+}
+
+
+</style>
+
+
+
+<body>
+
+  <div id="wrapper">
+
+  <nav>
+
+    <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="cat"></a></div>
+
+    <div class="nav-links">
+
+      <a id="nav-index" href="index.html">Home</a>
+
+      <a id="nav-about" href="about.html">About</a>
+
+      <a id="nav-projects" href="#">Calendar</a>
+
+	  <a id="nav-legacy" href="legacy.html">Our Legacy</a>
+   </div> 
+
+  </nav>
+
+
+
+  <header>
+
+    <h1><img src="img/SDG logo (words white).png" alt="logo" height="95%" width="55%"></h1>
+
+    <a href="https://github.com/Stark-State-Software-Devlopment-Guild"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+
+    <a href="https://www.facebook.com/Stark-State-College-Software-Development-Guild-1519047618176936/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+
+    <a href="https://twitter.com/software_guild"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+
+  </header>
+
+  
+
+  <article class="main">  
+
+    <h3>Our Legacy</h3>
+<br>
+<br>
+<div id="side-nav">
+	<p style="padding-top: 90px"><a href="legacy.html#fall17">Fall 2017</a></p>
+	<p><a href="legacy.html#spring18">Spring 2018</a></p>
+	<p><a href="legacy.html#fall18">Fall 2018</a></p>
+
+</div>
+<div style="text-align:center">
+<span id="members">
+
+<h1 name="fall17" id="fall17">
+Fall 2017
+</h1>
+
+<h2>Devin</h2>
+<h2>Tyler</h2>
+<h2>Caleb</h2>
+<h2>Jason</h2>
+<h2>Marco</h2>
+<img src="img/breakline.png" width="80vw" height="1vw">
+</span>
+
+<span id="members">
+
+<h1 name="spring18" id="spring18">
+Spring 2018
+</h1>
+
+<h2>Devin</h2>
+<h2>Tyler</h2>
+<h2>Caleb</h2>
+<h2>Jason</h2>
+<h2>Marco</h2>
+</span>
+
+<span id="members">
+
+<h1 name="fall18" id="fall18">
+Fall 2018
+</h1>
+
+<h2>Devin</h2>
+<h2>Tyler</h2>
+<h2>Caleb</h2>
+<h2>Jason</h2>
+<h2>Marco</h2>
+</span>
+</div>
+<!--
+Copy Pasta this section to add another semester to the list
+
+
+
+<div id="members">
+
+<h1>
+Fall 2018
+</h1>
+
+<h2>Devin</h2>
+<h2>Tyler</h2>
+<h2>Caleb</h2>
+<h2>Jason</h2>
+<h2>Marco</h2>
+</div>
+-->
+
+
+  </article>
+
+  
+
+
+
+<footer>
+
+    <section id="contact">
+
+      <h4>Contact:&nbsp;</h4>
+
+      <p>President Caleb Wagner&nbsp;</p>
+
+      <p><a href="mailto:cwagner0318@starkstate.net">cwagner0318@starkstate.net</a></p>
+
+    </section>
+
+    <section id="copyright">
+
+      <p>&copy; 2017 Software Development Guild</p>
+
+    </section>
+
+  </footer>
+
+ 
+
+  </div>
+
+
+
+</body>
+
+</html>
