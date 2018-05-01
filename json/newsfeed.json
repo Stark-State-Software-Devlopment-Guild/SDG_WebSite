@@ -1,0 +1,19 @@
+{
+	"elements":[
+		{
+			"Title": "Weekly Meeting",
+			"Date": "April 9th, 2018",
+			"Description": "We discussed upcoming events and our current progress on the website."
+		},
+		{
+			"Title": "Spring Fling",
+			"Date": "May 3rd, 2018",
+			"Description": "The guild will have a table to show off the current state of the website. Looking to get some new members!"
+		},
+		{
+			"Title": "Last Day of Finals Week",
+			"Date": "May 13th, 2018",
+			"Description": "School's out for the summer!"
+		}
+	]
+}

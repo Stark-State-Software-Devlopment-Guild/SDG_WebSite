@@ -37,8 +37,9 @@
   <!-- Include jQuery -->
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
   <script type="text/javascript" src="scripts/navigation.js"></script>
+  <script type="text/javascript" src="scripts/newsfeed.js"></script>
 </head>
-<body onload="NavData()">
+<body onload="NavData(); NewsfeedData();">
   <div id="wrapper">
   <nav>
     <div class="nav-img"><a href="index.html"><img src="img/SDG logo.png" height="60px" width="60px" alt="logo"></a></div>
@@ -63,25 +64,13 @@
     </section>
 
     <section class="newsfeed">
-      <div class = "box">
-        <span style="font-size: 5em; text-align: center;"><u>News Feed</u></span>
+      <div class = "box" text-align = "center">
+        <div style="font-size: 5em; text-align: center;"><u>News Feed</u></div>
         <br>
-        <marquee behavior="scroll" direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4">
-          <b>October 24th – Minutes</b>
-          <br>
-          Discussed web pages and assigned different web pages to the people that attended.
-          <br>
-          <br>
-          <br>
-          <br>
-          <b>October 31st – Agenda</b>
-          <br>
-          <ul>
-            <li>Each person assigned a web page should have the basic content finished by this time.</li>
-            <li> Discuss style of website and work on web pages to the next level of production (Basic style and descriptions)</li>
-            <li> Assign those who have not received a page for the website css style or some other task.</li>
-          </ul>
-        </marquee>
+        <div>
+            <div style="text-align: center;" id="newsfeed-content">
+			</div> 
+        </div>
       </div>
     </section>
     
@@ -129,3 +118,5 @@
 
 </body>
 </html>
+
+
